@@ -1,0 +1,23 @@
+{
+  "name": "artetv-monitoring-video",
+  "version": "1.0.0",
+  "description": "Analyse et captures d\u2019\u00e9cran d\u2019une vid\u00e9o Arte via une interface web",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "keywords": [
+    "arte",
+    "video",
+    "monitoring",
+    "screenshots"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "playwright": "^1.45.0"
+  }
+}
