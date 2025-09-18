@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analyseur de vid\u00e9os Arte</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Analyseur de vid\u00e9os Arte</h1>
+        <p>
+          Entrez l'URL d'une page vid\u00e9o Arte pour lancer l'analyse, r\u00e9cup\u00e9rer
+          les pistes audio/sous-titres, la dur\u00e9e et les captures d'\u00e9cran
+          (d\u00e9but, milieu, 30s avant la fin).
+        </p>
+      </header>
+
+      <section class="form-section">
+        <form id="analyze-form">
+          <label for="video-url">URL de la vid\u00e9o</label>
+          <div class="form-row">
+            <input
+              type="url"
+              id="video-url"
+              name="video-url"
+              placeholder="https://www.arte.tv/..."
+              required
+            />
+            <button type="submit">Analyser</button>
+          </div>
+        </form>
+        <p class="hint">
+          Astuce : apr\u00e8s l'installation, ex\u00e9cutez <code>npx playwright install</code>
+          pour installer le navigateur headless.
+        </p>
+      </section>
+
+      <section id="status" class="status" hidden></section>
+
+      <section id="results" class="results" hidden>
+        <div class="metadata">
+          <h2>R\u00e9sultats</h2>
+          <p><strong>Dur\u00e9e :</strong> <span id="duration"></span></p>
+        </div>
+
+        <div class="tracks">
+          <div>
+            <h3>Pistes audio</h3>
+            <ul id="audio-tracks"></ul>
+          </div>
+          <div>
+            <h3>Sous-titres</h3>
+            <ul id="text-tracks"></ul>
+          </div>
+        </div>
+
+        <div class="screenshots" id="screenshots"></div>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
